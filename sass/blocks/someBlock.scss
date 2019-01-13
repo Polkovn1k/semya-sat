@@ -1,0 +1,102 @@
+.someBlock {
+
+  @media (min-width: $desktop) {
+    padding-top: 52px;
+  }
+
+  &__container {
+    @include container();
+    padding-bottom: 35px;
+
+    @media (min-width: $desktop) {}
+  }
+
+  &__list {
+    @include order-reset();
+
+    @media (min-width: $add-tablet) {
+      text-align: center;
+    }
+
+    @media (min-width: $desktop) {
+      text-align: left;
+    }
+  }
+
+  &__item {
+    width: 80%;
+    padding-top: 40px;
+    padding-left: 25px;
+
+    @media (min-width: $add-tablet) {
+      display: inline-block;
+      vertical-align: top;
+      width: 30%;
+    }
+
+    @media (min-width: $desktop) {
+      padding-top: 42px;
+      padding-left: 0;
+      width: 31.4%;
+      margin-right: 22px;
+    }
+
+    svg {
+      display: block;
+      margin-bottom: 30px;
+      width: 57px;
+      height: 57px;
+      fill: $green;
+    }
+  }
+
+  &__item:last-child {
+
+    @media (min-width: $desktop) {
+      margin-right: 0;
+    }
+  }
+
+  &__item-title {
+    display: block;
+    margin-bottom: 6px;
+    font-family: $font;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+    text-align: left;
+    color: $main;
+  }
+
+  &__item-text {
+    @include order-reset();
+    font-family: $font;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    color: $add;
+  }
+
+  &__pagination {
+    position: absolute;
+    bottom: 60px;
+  }
+
+  &__pagination-item {
+    display: inline-block;
+    margin-right: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $white;
+    cursor: pointer;
+  }
+
+  &__pagination-item:last-child {
+    margin-right: 0;
+  }
+
+  &__pagination-item--active {
+    background: $green;
+  }
+}
