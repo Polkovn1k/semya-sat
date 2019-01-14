@@ -1,3 +1,10 @@
+@mixin container($miw: 320px, $maw: 1330px, $pd-right: 15px, $pd-left: 15px) {
+  min-width: $miw;
+  max-width: $maw;
+  padding-right: $pd-right;
+  padding-left: $pd-left;
+}
+
 @mixin field-reset() {
   margin: 0;
   padding: 0;

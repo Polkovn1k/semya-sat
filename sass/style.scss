@@ -5,5 +5,11 @@
 @import "general/global.scss";
 @import "general/bootstrap-grid.scss";
 
-@import "blocks/someBlock.scss";
+@import "blocks/header.scss";
+@import "blocks/btn.scss";
+@import "blocks/main.scss";
 @import "blocks/visually-hidden.scss";
+
+.navigation {
+  display: none;
+}
