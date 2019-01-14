@@ -1,0 +1,137 @@
+.news {
+
+}
+
+.news__container {
+  @include container();
+  padding-top: 30px;
+  @media (min-width: $md) {
+    padding-top: 60px;
+  }
+}
+
+.news__item {
+  @media (min-width: $md) {
+    padding-right: 10px;
+  }
+  @media (min-width: $lg) {
+    padding-right: 15px;
+  }
+  @media (min-width: $xl) {
+    padding-right: 25px;
+  }
+}
+
+.news__item--second {
+  padding-top: 20px;
+  @media (min-width: $md) {
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 10px;
+  }
+  @media (min-width: $lg) {
+    padding-right: 0;
+    padding-left: 15px;
+  }
+  @media (min-width: $xl) {
+    padding-right: 0;
+    padding-left: 25px;
+  }
+}
+
+.news__title-type {
+  @include field-reset();
+  position: relative;
+  padding-bottom: 5px;
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  color: $main-color;
+  span {
+    position: relative;
+    z-index: 10;
+    padding: 0 15px;
+    background: $white;
+  }
+}
+
+.news__title-type::before {
+  @include pseudo();
+  top: 12px;
+  width: 100%;
+  height: 1px;
+  background: $main-color;
+}
+
+.news__image {
+  position: relative;
+  display: block;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: url("../img/bg/news__1.jpg") no-repeat;
+  background-size: cover;
+  @media (min-width: $md) {
+    min-height: 365px;
+  }
+}
+
+.news__image--beginner {
+  background: url("../img/bg/news__2.jpg") no-repeat;
+  background-size: cover;
+}
+
+.news__title {
+  @include field-reset();
+  position: absolute;
+  bottom: 0;
+  min-height: 90px;
+  overflow: hidden;
+  width: 100%;
+  padding: 17px 20px;
+  background: transparentize($black, 0.5);
+
+  font-family: $font;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: left;
+  color: $white;
+  transition: background 0.5s ease;
+  @media (min-width: $md) {
+    min-height: 117px;
+    padding: 20px 25px;
+    font-size: 21px;
+  }
+  @media (min-width: $lg) {
+    font-size: 23px;
+  }
+}
+
+.news__title::before {
+  @include pseudo();
+  z-index: 100;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 90px;
+  background: url("../../img/bg/news__arrow.png") no-repeat;
+  background-size: contain;
+  transform: translateX(-20px);
+  transition: transform 0.5s ease;
+  @media (min-width: $md) {
+    width: 65px;
+    height: 117px;
+  }
+}
+
+.news__image:hover {
+  .news__title {
+    background: transparentize($black, 0.2);
+  }
+  .news__title::before {
+    transform: translateX(30px);
+  }
+}
