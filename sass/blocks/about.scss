@@ -1,0 +1,87 @@
+.about {
+  margin-bottom: 50px;
+}
+
+.about__container {
+  @include container();
+  margin: 0 auto;
+}
+
+.about__title {
+  @include field-reset();
+  padding: 0 10px;
+  margin-bottom: 40px;
+  font-family: $font;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: center;
+  color: $main-color;
+}
+
+.about__item {
+  margin-bottom: 25px;
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $main-color;
+  @media (min-width: $md) {
+    margin-bottom: 35;
+    font-size: 13px;
+  }
+  @media (min-width: $lg) {
+    font-size: 16px;
+  }
+}
+
+.about__icon {
+  margin-bottom: 5px;
+}
+
+.about__item-title {
+  @include field-reset();
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.about__item-text {
+  @include field-reset();
+}
+
+.about__add {
+  margin-bottom: 25px;
+  padding: 0 15px;
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $main-color;
+  @media (min-width: $md) {
+    font-size: 13px;
+  }
+  @media (min-width: $lg) {
+    font-size: 16px;
+  }
+}
+
+.about__add:last-child {
+  margin-bottom: 0;
+}
+
+.about__add-title {
+  @include field-reset();
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  @media (min-width: $md) {
+    font-size: 16px;
+  }
+  @media (min-width: $lg) {
+    font-size: 18px;
+  }
+}
+
+.about__add-text {
+  @include field-reset();
+}
