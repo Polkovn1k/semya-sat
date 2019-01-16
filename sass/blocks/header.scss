@@ -69,7 +69,14 @@
 }
 
 .header__open-search {
-
+  svg {
+    width: 100%;
+    stroke: $white;
+    transition: stroke 0.3s ease;
+  }
+  svg:hover {
+    stroke: $hovers;
+  }
 }
 
 .header__close-search {
@@ -77,5 +84,12 @@
 }
 
 .header__nav-tog {
-
+  svg {
+    width: 100%;
+    fill: $white;
+    transition: fill 0.3s ease;
+  }
+  svg:hover {
+    fill: $hovers;
+  }
 }
