@@ -14,7 +14,18 @@ var svgstore = require("gulp-svgstore");
 var rename = require("gulp-rename");
 var server = require("browser-sync").create();
 var run = require("run-sequence");
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglifyjs');
 var del = require("del");
+
+gulp.task("script", function() {
+  return gulp.src("js/*.js")
+  .pipe(concat("script.js"))
+  .pipe(gulp.dest('build/js'))
+  .pipe(uglify())
+  .pipe(rename("script.min.js"))
+  .pipe(gulp.dest('build/js'));
+});
 
 gulp.task("style", function() {
   gulp.src("sass/style.scss")
@@ -78,13 +89,18 @@ gulp.task("clean", function() {
   return del("build");
 });
 
+gulp.task("cleanTwo", function() {
+  return del(["build/js/*.js", "!build/js/script.js", "!build/js/script.min.js"]);
+});
+
 gulp.task("serve", ["style"], function() {
   server.init({
     server: "build/"
   });
 
-  gulp.watch("sass/**/*.{scss,sass}", ["style"]);
+  gulp.watch("sass/**/*.{scss,sass}", ["style"])
   gulp.watch("*.html", ["html"])
+  gulp.watch('js/**/*.js', ["script"])
     .on("change", server.reload);
 });
 
@@ -95,5 +111,10 @@ gulp.task("build", function(done) {
     "style",
     "sprite",
     "html",
+    "script",
+    "cleanTwo",
     done);
 });
+
+
+//del("build/js/*.js, !build/js/script.js, !build/js/script.min.js");
