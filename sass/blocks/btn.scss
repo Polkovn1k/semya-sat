@@ -24,13 +24,20 @@
 }
 
 .btn--nav {
+  flex-shrink: 0;
+  height: 37px;
   width: 30%;
+  min-width: 100px;
   max-width: 235px;
   margin-top: 13px;
-  margin-left: 9px;
+  margin-bottom: 13px;
   span {
     display: none;
-    @media (min-width: $md) {
+  }
+  @media (min-width: $md) {
+    margin-bottom: 0;
+    flex-grow: 1;
+    span {
       display: inline;
     }
   }

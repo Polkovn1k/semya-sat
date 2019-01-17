@@ -3,9 +3,9 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  height: $nav-height;
+  height: auto;
   margin: 0 auto;
-  overflow: hidden;
+  //overflow: hidden;
   background: $black;
 }
 
@@ -29,6 +29,7 @@
 }
 
 .header__logo-link {
+  display: block;
   svg {
     width: 100%;
     fill: $white;
@@ -40,14 +41,28 @@
 }
 
 .header__panel {
-  margin-left: auto;
-  padding-top: 17px;
+  display: flex;
+  flex-wrap: wrap;
+  order: 1;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 13px;
   @media (min-width: $md) {
-    padding-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-grow: 1;
+    order: 0;
+    width: auto;
+    margin-left: auto;
+    margin-right: 10px;
   }
 }
 
 .header__icon {
+  flex-shrink: 0;
+  margin-top: 4px;
   padding: 1px 6px;
   font-size: 0;
   width: 30px;
@@ -56,21 +71,55 @@
   border: none;
   cursor: pointer;
   @media (min-width: $md) {
+    margin-top: 15px;
     width: 35px;
     height: 35px;
   }
   svg {
     width: 100%;
+    height: 100%;
   }
 }
 
 .header__search {
-  display: none;
+  @include placeholder {
+    color: $white;
+  }
+  @include placeholder-f {
+    color: $logo-color;
+  }
+  display: inline-block;
+  width: 70%;
+  height: 37px;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  background: $black;
+  border: 1px solid $white;
+  border-radius: 10px;
+  font-family: $font;
+  line-height: 1.15;
+  font-size: 13px;
+  font-weight: 400;
+  color: $white;
+  @media (min-width: $md) {
+    margin-top: 13px;
+    width: 75%;
+    flex-grow: 0;
+  }
 }
 
-.header__open-search {
+.header__search:focus {
+  outline: none;
+  border-color: $hovers;
+}
+
+.header__form-push {
+  order: -1;
+  margin-right: 10px;
   svg {
     width: 100%;
+    height: 100%;
     stroke: $white;
     transition: stroke 0.3s ease;
   }
@@ -79,13 +128,33 @@
   }
 }
 
-.header__close-search {
-  display: none;
+.header__tog-search {
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: $white;
+    transition: fill 0.3s ease;
+  }
+  svg:hover {
+    fill: $hovers;
+  }
+}
+
+.header__links-block {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  @media (min-width: $md) {
+    flex-grow: 0;
+  }
 }
 
 .header__nav-tog {
+  margin-top: 15px;
+  margin-right: 10px;
   svg {
     width: 100%;
+    height: 100%;
     fill: $white;
     transition: fill 0.3s ease;
   }

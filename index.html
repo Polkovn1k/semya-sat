@@ -31,29 +31,35 @@
           </svg>
         </a>
       </div>
-      <div class="header__panel">
-        <button type="button" class="header__open-search header__icon">
-        Open search panel
-        <svg width="" height="" aria-hidden="true" role="presentation">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-icon"></use>
-        </svg>
-      </button>
+      <form method="post" enctype="application/x-www-form-urlencoded" action="#" autocomplete="off" class="header__panel">
         <input type="search" placeholder="Введите слово для поиска" class="header__search">
-        <button type="button" class="header__close-search header__icon">
-        Close search panel
-      </button>
+        <button type="button" class="header__tog-search header__icon">
+          Close search panel
+          <svg width="" height="" aria-hidden="true" role="presentation">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close-search"></use>
+          </svg>
+        </button>
+        <button type="button" class="header__form-push header__icon">
+          Open search panel
+          <svg width="" height="" aria-hidden="true" role="presentation">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-icon"></use>
+          </svg>
+        </button>
+      </form>
+      <div class="header__links-block">
         <button type="button" class="header__nav-tog header__icon">
-        Open/Close navigation
-        <svg width="" height="" aria-hidden="true" role="presentation">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-icon"></use>
-        </svg>
-      </button>
+          Open/Close navigation
+          <svg width="" height="" aria-hidden="true" role="presentation">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-icon"></use>
+          </svg>
+        </button>
+        <a href="https://semyanich-semena.zone/" title="Перейти в магазин Семяныч" class="btn btn--nav">
+          <span>Перейти в </span>магазин
+        </a>
       </div>
-      <a href="https://semyanich-semena.zone/" title="Перейти в магазин Семяныч" class="btn btn--nav"><span>Перейти в </span>магазин
-      </a>
-      <nav class="navigation">
+      <nav class="navigation navigation--header">
         <ul class="navigation__list">
-          <li class="navigation__item">
+          <li class="navigation__item active">
             <a href="#" class="navigation__item-link">
               Все статьи
             </a>
@@ -123,7 +129,7 @@
       </div>
     </section>
 
-    <div class="navigation navigation__body">
+    <div class="navigation navigation--body">
       <ul class="navigation__list">
         <li class="navigation__item active">
           <a href="#" class="navigation__item-link">
@@ -366,7 +372,7 @@
           <a href="https://semyanich-semena.zone/" title="Перейти в магазин Семяныч" class="btn btn--footer">Перейти в магазин
           </a>
         </div>
-        <nav class="navigation navigation__footer col-12 col-md-6">
+        <nav class="navigation navigation--footer col-12 col-md-6">
           <ul class="navigation__list">
             <li class="navigation__item">
               <a href="#" class="navigation__item-link">

@@ -28,3 +28,65 @@
   width: 100%;
   height: 100%;
 }
+
+//-------------------------------------------default placeholder
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+//-------------------------------------------hover
+@mixin placeholder-h {
+  &:hover::-webkit-input-placeholder {
+    @content;
+  }
+  &:hover:-moz-placeholder {
+    @content;
+  }
+  &:hover::-moz-placeholder {
+    @content;
+  }
+  &:hover:-ms-input-placeholder {
+    @content;
+  }
+}
+
+//-------------------------------------------focus
+@mixin placeholder-f {
+  &:focus::-webkit-input-placeholder {
+    @content;
+  }
+  &:focus:-moz-placeholder {
+    @content;
+  }
+  &:focus::-moz-placeholder {
+    @content;
+  }
+  &:focus:-ms-input-placeholder {
+    @content;
+  }
+}
+
+.someInput {
+  @include placeholder {
+    color: red;
+  }
+
+  @include placeholder-h {
+    color: green;
+  }
+
+  @include placeholder-f {
+    color: aqua;
+  }
+}

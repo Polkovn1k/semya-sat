@@ -1,9 +1,128 @@
 .navigation {
-  display: none;
+  //display: none !important;
 }
 
 //------body-nav
-.navigation__body {
+.navigation--header {
+  position: relative;
+  order: 1;
+  width: 100%;
+  flex-grow: 1;
+  margin: 0 (-$container-padding);
+  background: $white;
+  @media (min-width: $md) {
+    order: 0;
+  }
+  @media (min-width: $xl) {
+    flex-grow: 1;
+    display: block;
+    background: $white;
+  }
+  &::after {
+    @media (min-width: $xl) {
+      @include pseudo();
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      background: $white;
+      transform: translateX(-50%);
+    }
+  }
+  .navigation__list {
+    @include order-reset();
+    @media (min-width: $xl) {
+      @include container();
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+  }
+  .navigation__list::before {
+    @media (min-width: $xl) {
+      @include pseudo();
+      right: $container-padding;
+      bottom: 0;
+      left: $container-padding;
+      border-bottom: 1px solid $main-color;
+    }
+  }
+  .navigation__item {
+    position: relative;
+    padding: 0;
+    min-height: 45px;
+    flex-grow: 1;
+    font-family: $font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    text-align: left;
+    color: $main-color;
+    @media (min-width: $xl) {
+      padding: 0 5px;
+      text-align: center;
+    }
+  }
+  .navigation__item:hover {
+    @media (min-width: $xl) {
+      color: $hovers;
+    }
+  }
+  .navigation__item:hover::before {
+    @media (min-width: $xl) {
+      @include pseudo();
+      z-index: 10;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: currentColor;
+    }
+  }
+  .navigation__item-link {
+    display: block;
+    padding: 0 15px;
+    box-shadow: 0 1px 0 0 transparentize($black, 0.9);
+    @media (min-width: $xl) {
+      display: inline;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+  .navigation__item-link:hover {
+    box-shadow: 0 1px 0 0 transparentize($black, 0.75);
+    color: $hovers;
+    @media (min-width: $xl) {
+      box-shadow: none;
+    }
+  }
+  .active,
+  .active:hover {
+    @media (min-width: $xl) {
+      color: $main-color;
+      font-weight: 700;
+      .navigation__item-link {
+        cursor: default;
+      }
+    }
+  }
+  .active::before {
+    @media (min-width: $xl) {
+      @include pseudo();
+      z-index: 10;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: currentColor;
+    }
+  }
+}
+
+//------body-nav
+.navigation--body {
   display: none;
   @media (min-width: $xl) {
     display: block;
@@ -68,7 +187,7 @@
 }
 
 //------footer-nav
-.navigation__footer {
+.navigation--footer {
   display: none;
   margin-bottom: 10px;
   @media (min-width: $md) {
