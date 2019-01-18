@@ -62,6 +62,21 @@ searchTog.addEventListener("click", function(event) {
 
 
 
+//Двигаем панель search (дизйнерские изыски)
+var header = document.querySelector(".header");
+var searchTog = header.querySelector(".header__tog-search");
+
+searchTog.addEventListener("click", function(event) {
+  event.preventDefault();
+  header.classList.toggle("header--search-move");
+});
+
+
+
+
+
+
+
 
 
 //при событиях клика или изменении вьюпорта пересчитывается высота блока и ставится отступ у main
