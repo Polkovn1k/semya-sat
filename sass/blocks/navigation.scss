@@ -1,9 +1,10 @@
 .navigation {
-  //display: none !important;
+  //display: none;
 }
 
 //------body-nav
 .navigation--header {
+  display: none;
   position: relative;
   order: 1;
   width: 100%;
@@ -15,7 +16,7 @@
   }
   @media (min-width: $xl) {
     flex-grow: 1;
-    display: block;
+    //display: block;
     background: $white;
   }
   &::after {
@@ -119,6 +120,9 @@
       background: currentColor;
     }
   }
+}
+.navigation--header-open {
+  display: block;
 }
 
 //------body-nav
