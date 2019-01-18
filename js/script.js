@@ -102,3 +102,57 @@ searchTog.addEventListener("click", function() {
   heightVal = header.offsetHeight + "px";
   mainVal.style.marginTop = heightVal;
 });
+
+
+
+
+
+
+
+
+//ПОПЫТКА СДЕЛАТЬ ACTIVE НА ФИЛЬТРЕ LIST TYPE
+var articles = document.querySelector(".articles");
+var listTypeViewItem = document.querySelectorAll(".articles__list-type-view");
+
+/*for (var i = 0; i < listTypeViewItem.length; i++) {
+  //debugger;
+  (function(listTypeViewItem) {
+    listTypeViewItem.addEventListener("click", function(event) {
+      event.preventDefault();
+      console.log(i);
+    });
+  })(listTypeViewItem[i]);
+}*/
+
+
+/*
+listTypeViewItem.addEventListener("click", function(event) {
+  event.preventDefault();
+  var currentElement = event.target;
+  console.log(event.currentTarget === listTypeViewItem);
+  console.log(event.target === listTypeViewItem);
+  for (var i = 0; i < listTypeViewItem.length; i++) {
+    listTypeViewItem[i].classList.remove('active');
+    currentElement.classList.add('active');
+if (listTypeViewItem[i].classList.contain("articles__grid")) {
+      listTypeViewItem[i].classList.toggle("articles__grid")
+    }
+  };
+});*/
+
+
+
+
+
+
+
+
+var addThumbnailClickHandler = function (thumbnail) {
+  thumbnail.addEventListener('click', function () {
+    console.log(i);
+  });
+};
+
+for (var i = 0; i < listTypeViewItem.length; i++) {
+  addThumbnailClickHandler(listTypeViewItem[i]);
+}
