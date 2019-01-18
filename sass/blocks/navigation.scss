@@ -4,7 +4,7 @@
 
 //------body-nav
 .navigation--header {
-  display: none;
+  display: block;
   position: relative;
   order: 1;
   width: 100%;
@@ -120,9 +120,6 @@
       background: currentColor;
     }
   }
-}
-.navigation--header-open {
-  display: block;
 }
 
 //------body-nav
