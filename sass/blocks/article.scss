@@ -123,7 +123,10 @@
 .articles--row {
   @media (min-width: $md) {
     .article {
-      flex: 0 0 100%;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+      width: 100%;
       max-width: none;
       margin-bottom: 30px;
     }
