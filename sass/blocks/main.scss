@@ -1,3 +1,60 @@
 .main {
   margin-top: $nav-height;
 }
+
+.main__captions {
+  @include container();
+  margin: 0 auto;
+}
+
+.main__back {
+  display: none;
+  @media (min-width: $sm) {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    background: $white;
+    font-size: 0;
+  }
+}
+
+.main__back::before {
+  @include pseudo();
+  width: 16px;
+  height: 16px;
+  left: 9px;
+  top: 11px;
+  border: 2px solid $main-color;
+  border-right: 2px solid $transparent;
+  border-top: 2px solid $transparent;
+  transform: rotate(45deg);
+}
+
+.main__back::after {
+  @include pseudo();
+  width: 24px;
+  height: 2px;
+  top: 18px;
+  left: 9px;
+  background: $main-color;
+}
+
+.main__title {
+  @include field-reset();
+  margin-bottom: 35px;
+  display: inline-block;
+  position: relative;
+  font-family: $font;
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: $main-color;
+  @media (min-width: $sm) {
+    font-size: 26px;
+  }
+}

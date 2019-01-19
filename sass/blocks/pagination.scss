@@ -1,0 +1,39 @@
+.pagination {
+  height: 50px;
+  @media (min-width: $md) {
+    height: auto;
+    padding: 40px 0 20px 0;
+  }
+}
+.pagination__list {
+  display: none;
+  @media (min-width: $md) {
+    @include order-reset();
+    @include container();
+    display: block;
+    margin: 0 auto;
+  }
+}
+.pagination__item {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 22px;
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $main-color;
+  a[href]:hover {
+    color: $hovers;
+  }
+}
+.pagination__item:last-child {
+  margin-right: 0;
+}
+.pagination__item:not(:last-child)::before {
+  display: block;
+  content: "—";
+  position: absolute;
+  right: -20px;
+}
