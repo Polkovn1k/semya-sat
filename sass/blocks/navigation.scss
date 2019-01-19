@@ -248,4 +248,13 @@
   .navigation__item-link:hover {
     color: $hovers;
   }
+  .active,
+  .active:hover {
+    color: $main-color;
+    font-weight: 700;
+    .navigation__item-link {
+      color: $main-color;
+      cursor: default;
+    }
+  }
 }

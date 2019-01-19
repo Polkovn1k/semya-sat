@@ -1,12 +1,9 @@
-.search {
-
-}
+.search {}
 
 .search__container {
   @include container();
   margin: 0 auto;
   padding-bottom: 20px;
-  //background: #ccc;
 }
 
 .search__title {

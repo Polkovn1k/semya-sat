@@ -23,6 +23,10 @@
   }
 }
 
+.main__back:hover {
+  opacity: 0.6;
+}
+
 .main__back::before {
   @include pseudo();
   width: 16px;
