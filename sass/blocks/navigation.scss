@@ -1,6 +1,4 @@
-.navigation {
-  //display: none;
-}
+.navigation {}
 
 //------body-nav
 .navigation--header {
@@ -16,7 +14,6 @@
   }
   @media (min-width: $xl) {
     flex-grow: 1;
-    //display: block;
     background: $white;
   }
   &::after {
@@ -80,6 +77,19 @@
       width: 100%;
       height: 4px;
       background: currentColor;
+    }
+  }
+  .navigation__item.active:hover {
+    cursor: default;
+    .navigation__item-link {
+      color: $main-color;
+      cursor: default;
+    }
+    .navigation__item-link:hover {
+      box-shadow: 0 1px 0 0 transparentize($black, 0.9);
+      @media (min-width: $xl) {
+        box-shadow: none;
+      }
     }
   }
   .navigation__item-link {

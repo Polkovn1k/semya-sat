@@ -126,3 +126,16 @@ var callback = function (i) {
 for (var i = 0; i < listTypeViewItem.length; i++) {
   listTypeViewItem[i].addEventListener("click", callback(i), true);
 }
+
+
+
+
+
+
+//Скрываем рекламу
+var ad = document.querySelector(".advertising");
+var adClose = ad.querySelector(".advertising__close");
+
+adClose.addEventListener("click", function(event) {
+  ad.classList.add("advertising--close");
+});
