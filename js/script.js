@@ -1,16 +1,3 @@
-/*var header = document.querySelector(".header");
-var mainVal = document.querySelector(".main");
-
-var heightVal = header.offsetHeight + "px";
-mainVal.style.marginTop = heightVal;
-
-window.addEventListener("resize", function() {
-  heightVal = header.offsetHeight + "px";
-  mainVal.style.marginTop = heightVal;
-});*/
-
-
-
 //показываем навигацию по клику + меняем иконку на тоглере навигации
 var header = document.querySelector(".header");
 var headerNav = header.querySelector(".navigation--header");
@@ -59,9 +46,6 @@ searchTog.addEventListener("click", function(event) {
 
 
 
-
-
-
 //Двигаем панель search (дизйнерские изыски)
 var header = document.querySelector(".header");
 var searchTog = header.querySelector(".header__tog-search");
@@ -70,9 +54,6 @@ searchTog.addEventListener("click", function(event) {
   event.preventDefault();
   header.classList.toggle("header--search-move");
 });
-
-
-
 
 
 
@@ -108,51 +89,40 @@ searchTog.addEventListener("click", function() {
 
 
 
+//при клике на фильтр List type - меняется отображение статей
+var articles = document.querySelector(".articles");
+var listTypeViewItem = document.querySelectorAll(".articles__list-type-view");
+
+var callback = function (i) {
+  return function (event) {
+    if (event.currentTarget.classList.contains("articles__row")) {
+      return articles.classList.add("articles--row");
+    }
+    articles.classList.remove("articles--row");
+  };
+}
+
+for (var i = 0; i < listTypeViewItem.length; i++) {
+  listTypeViewItem[i].addEventListener("click", callback(i), true);
+}
+
+
+
+
 
 
 //ПОПЫТКА СДЕЛАТЬ ACTIVE НА ФИЛЬТРЕ LIST TYPE
 var articles = document.querySelector(".articles");
 var listTypeViewItem = document.querySelectorAll(".articles__list-type-view");
 
-/*for (var i = 0; i < listTypeViewItem.length; i++) {
-  //debugger;
-  (function(listTypeViewItem) {
-    listTypeViewItem.addEventListener("click", function(event) {
-      event.preventDefault();
-      console.log(i);
-    });
-  })(listTypeViewItem[i]);
-}*/
-
-
-/*
-listTypeViewItem.addEventListener("click", function(event) {
-  event.preventDefault();
-  var currentElement = event.target;
-  console.log(event.currentTarget === listTypeViewItem);
-  console.log(event.target === listTypeViewItem);
-  for (var i = 0; i < listTypeViewItem.length; i++) {
-    listTypeViewItem[i].classList.remove('active');
-    currentElement.classList.add('active');
-if (listTypeViewItem[i].classList.contain("articles__grid")) {
-      listTypeViewItem[i].classList.toggle("articles__grid")
+var callback = function (i) {
+  return function (event) {
+    if (event.currentTarget === listTypeViewItem[i]) {
+      return listTypeViewItem[i].classList.add("active");
     }
   };
-});*/
-
-
-
-
-
-
-
-
-var addThumbnailClickHandler = function (thumbnail) {
-  thumbnail.addEventListener('click', function () {
-    console.log(i);
-  });
-};
+}
 
 for (var i = 0; i < listTypeViewItem.length; i++) {
-  addThumbnailClickHandler(listTypeViewItem[i]);
+  listTypeViewItem[i].addEventListener("click", callback(i), true);
 }

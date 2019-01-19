@@ -35,6 +35,14 @@
   }
 }
 
+.articles__list-type-view.active {
+  svg,
+  svg:hover {
+    cursor: default;
+    fill: $main-color;
+  }
+}
+
 .articles__list-type-view:last-child {
   margin-right: 0;
 }
