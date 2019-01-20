@@ -153,7 +153,7 @@ var xhr = new XMLHttpRequest();//объект запроса
 var fragments = document.createDocumentFragment();//фрагмент одного массива
 var articleParent = document.querySelector(".articles__list");//сюда в конец будем вставлять готовый фрагмент
 var articleChild = articleParent.querySelector(".article").cloneNode(true);//эти блоки будем вставлять во фрагмент
-var childImg = articleChild.querySelector(".article__img");//тут меняем Title
+var childImg = articleChild.querySelector(".article__img");//тут меняем Img
 var childTitle = articleChild.querySelector(".article__title");//тут меняем Title
 var childUrl = articleChild.querySelector(".article__link");//тут меняем URL
 
@@ -167,9 +167,12 @@ xhr.addEventListener('load', function () {
   btnAjax.addEventListener("click", function (event) {
     event.preventDefault();
     for (var i = 0; i < allData[0].length; i++) {
-
+      childImg.style.backgroundImage = allData[0][i][0];
+      childTitle.innerText = allData[0][i][1];
+      childUrl.href = allData[0][i][2];
+      fragments.appendChild(articleChild.cloneNode(true));
     }
-    console.log(allData);
+    articleParent.appendChild(fragments);
     allData.shift();
   });
 });
