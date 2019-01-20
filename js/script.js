@@ -157,23 +157,23 @@ var childImg = articleChild.querySelector(".article__img");//тут меняем
 var childTitle = articleChild.querySelector(".article__title");//тут меняем Title
 var childUrl = articleChild.querySelector(".article__link");//тут меняем URL
 
-
-
 xhr.responseType = "json";
-
 xhr.addEventListener('load', function () {
   var allData = xhr.response;
 
   btnAjax.addEventListener("click", function (event) {
     event.preventDefault();
-    for (var i = 0; i < allData[0].length; i++) {
-      childImg.style.backgroundImage = allData[0][i][0];
-      childTitle.innerText = allData[0][i][1];
-      childUrl.href = allData[0][i][2];
-      fragments.appendChild(articleChild.cloneNode(true));
+    if (allData.length !== 0) {
+      console.log(allData);
+      for (var i = 0; i < allData[0].length; i++) {
+        childImg.style.backgroundImage = allData[0][i][0];
+        childTitle.innerText = allData[0][i][1];
+        childUrl.href = allData[0][i][2];
+        fragments.appendChild(articleChild.cloneNode(true));
+      }
+      articleParent.appendChild(fragments);
+      allData.shift();
     }
-    articleParent.appendChild(fragments);
-    allData.shift();
   });
 });
 
