@@ -27,6 +27,11 @@ gulp.task("script", function() {
   .pipe(gulp.dest('build/js'));
 });
 
+gulp.task("json", function() {
+  return gulp.src("json/*.json")
+  .pipe(gulp.dest('build/json'))
+});
+
 gulp.task("style", function() {
   gulp.src("sass/style.scss")
     .pipe(plumber())
@@ -112,6 +117,7 @@ gulp.task("build", function(done) {
     "sprite",
     "html",
     "script",
+    "json",
     "cleanTwo",
     done);
 });

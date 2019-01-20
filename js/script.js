@@ -1,3 +1,5 @@
+'use strict';
+
 //показываем навигацию по клику + меняем иконку на тоглере навигации
 var header = document.querySelector(".header");
 var headerNav = header.querySelector(".navigation--header");
@@ -139,3 +141,38 @@ var adClose = ad.querySelector(".advertising__close");
 adClose.addEventListener("click", function(event) {
   ad.classList.add("advertising--close");
 });
+
+
+
+
+
+
+//подгрузка ajax'а
+var btnAjax = document.querySelector(".btn--show-article");//кнопка нажатия
+var xhr = new XMLHttpRequest();//объект запроса
+var fragments = document.createDocumentFragment();//фрагмент одного массива
+var articleParent = document.querySelector(".articles__list");//сюда в конец будем вставлять готовый фрагмент
+var articleChild = articleParent.querySelector(".article").cloneNode(true);//эти блоки будем вставлять во фрагмент
+var childImg = articleChild.querySelector(".article__img");//тут меняем Title
+var childTitle = articleChild.querySelector(".article__title");//тут меняем Title
+var childUrl = articleChild.querySelector(".article__link");//тут меняем URL
+
+
+
+xhr.responseType = "json";
+
+xhr.addEventListener('load', function () {
+  var allData = xhr.response;
+
+  btnAjax.addEventListener("click", function (event) {
+    event.preventDefault();
+    for (var i = 0; i < allData[0].length; i++) {
+
+    }
+    console.log(allData);
+    allData.shift();
+  });
+});
+
+xhr.open("GET", "../json/articleData.json");
+xhr.send();
