@@ -18,14 +18,14 @@
   border-radius: 10px;
   background-color: #f7f7f7;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
   border: 1px solid $transparent;
   @media (min-width: $sm) {
     height: 113px;
   }
   @media (min-width: $md) {
-    height: 290px;
+    height: 285px;
   }
   @media (min-width: $xl) {
     height: 330px;
@@ -83,7 +83,7 @@
   font-family: $font;
   font-size: 13px;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
   color: $main-color;
   @media (min-width: $sm) {
     //margin-bottom: 11px;
