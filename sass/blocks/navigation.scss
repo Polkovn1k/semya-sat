@@ -2,6 +2,9 @@
 
 //------body-nav
 .navigation--header {
+  max-height: 0;
+  transition: max-height 0.5s ease;
+
   display: block;
   position: relative;
   order: 1;
@@ -86,27 +89,27 @@
       cursor: default;
     }
     .navigation__item-link:hover {
-      box-shadow: 0 1px 0 0 transparentize($black, 0.9);
+      border-bottom: 1px solid transparentize($black, 0.9);
       @media (min-width: $xl) {
-        box-shadow: none;
+        border-color: $transparent;
       }
     }
   }
   .navigation__item-link {
     display: block;
     padding: 0 15px;
-    box-shadow: 0 1px 0 0 transparentize($black, 0.9);
+    border-bottom: 1px solid transparentize($black, 0.9);
     @media (min-width: $xl) {
       display: inline;
       padding: 0;
-      box-shadow: none;
+      border-color: $transparent;
     }
   }
   .navigation__item-link:hover {
-    box-shadow: 0 1px 0 0 transparentize($black, 0.75);
+    border-bottom: 1px solid transparentize($black, 0.75);
     color: $hovers;
     @media (min-width: $xl) {
-      box-shadow: none;
+      border-color: $transparent;
     }
   }
   .active,
@@ -257,4 +260,10 @@
       cursor: default;
     }
   }
+}
+
+//------анимация открытия навигации
+.navigation--open {
+  max-height: 100vh;
+  transition: max-height 0.5s ease;
 }

@@ -7,10 +7,10 @@
   var navTog = header.querySelector(".header__nav-tog");
   var navTogSvg = header.querySelectorAll(".header__nav-tog svg");
 
-  navTog.addEventListener("click", function(event) {
+  /*navTog.addEventListener("click", function(event) {
     event.preventDefault();
-    headerNav.classList.toggle("visually-hidden");
-  });
+    headerNav.classList.toggle("open-nav");
+  });*/
 
   navTog.addEventListener("click", function(event) {
     event.preventDefault();
@@ -65,19 +65,21 @@
   var mainVal = document.querySelector(".main");
   var navTog = header.querySelector(".header__nav-tog");
   var searchTog = header.querySelector(".header__tog-search");
+  var headerNav = document.querySelector(".navigation--header");
   var heightVal;
 
-  heightVal = header.offsetHeight + "px";
-  mainVal.style.marginTop = heightVal;
-
-  window.addEventListener("resize", function() {
+  function headerHeight () {
     heightVal = header.offsetHeight + "px";
     mainVal.style.marginTop = heightVal;
+  };
+
+  window.addEventListener("resize", function() {
+    headerHeight();
   });
 
   navTog.addEventListener("click", function() {
-    heightVal = header.offsetHeight + "px";
-    mainVal.style.marginTop = heightVal;
+    headerNav.classList.toggle("navigation--open");
+    setTimeout(headerHeight, 550);
   });
 
   searchTog.addEventListener("click", function() {
