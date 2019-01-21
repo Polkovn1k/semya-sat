@@ -3,7 +3,7 @@
 //------body-nav
 .navigation--header {
   max-height: 0;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.5s linear;
 
   display: block;
   position: relative;
@@ -265,5 +265,5 @@
 //------анимация открытия навигации
 .navigation--open {
   max-height: 100vh;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.5s linear;
 }

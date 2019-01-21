@@ -25,14 +25,20 @@
 (function () {
   //показываем поиск по клику + меняем иконку на тоглере поиска
   var header = document.querySelector(".header");
-  var headerSearchItems = header.querySelectorAll(".header__panel > *:not(.header__tog-search");
+  var headerSearchPanel = header.querySelector(".header__panel");
+  var headerSearchItems = headerSearchPanel.querySelectorAll(".header__panel > *:not(.header__tog-search");
   var searchTog = header.querySelector(".header__tog-search");
   var searchTogSvg = header.querySelectorAll(".header__tog-search svg");
 
   searchTog.addEventListener("click", function(event) {
     event.preventDefault();
+    headerSearchPanel.classList.toggle("header__panel--md-open");
+  });
+
+  searchTog.addEventListener("click", function(event) {
+    event.preventDefault();
     for (var i = 0; i < headerSearchItems.length; i++) {
-      headerSearchItems[i].classList.toggle("visually-hidden");
+      headerSearchItems[i].classList.toggle("visually-hidden--search");
     };
   });
 
@@ -79,7 +85,7 @@
 
   navTog.addEventListener("click", function() {
     headerNav.classList.toggle("navigation--open");
-    setTimeout(headerHeight, 550);
+    setTimeout(headerHeight, 530);
   });
 
   searchTog.addEventListener("click", function() {
@@ -148,14 +154,14 @@
 
 
 //подгрузка ajax'а
-  var btnAjax = document.querySelector(".btn--show-article");
-  var xhr = new XMLHttpRequest();
-  var fragments = document.createDocumentFragment();
-  var articleParent = document.querySelector(".articles__list");
-  var articleChild = articleParent.querySelector(".article").cloneNode(true);
-  var childImg = articleChild.querySelector(".article__img");
-  var childTitle = articleChild.querySelector(".article__title");
-  var childUrl = articleChild.querySelector(".article__link");
+var btnAjax = document.querySelector(".btn--show-article");
+var xhr = new XMLHttpRequest();
+var fragments = document.createDocumentFragment();
+var articleParent = document.querySelector(".articles__list");
+var articleChild = articleParent.querySelector(".article").cloneNode(true);
+var childImg = articleChild.querySelector(".article__img");
+var childTitle = articleChild.querySelector(".article__title");
+var childUrl = articleChild.querySelector(".article__link");
 
 //xhr.responseType = "json"; -- не работает в ссаном IE
 xhr.addEventListener('load', function () {

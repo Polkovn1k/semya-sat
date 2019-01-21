@@ -42,7 +42,7 @@
 
 .header__panel {
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   order: 1;
   justify-content: flex-end;
   align-items: flex-start;
@@ -56,6 +56,10 @@
     height: auto;
     margin-left: auto;
     margin-right: 10px;
+    height: 50px;
+    max-width: 45px;
+    overflow: hidden;
+    transition: max-width 0.5s linear;
   }
 }
 
@@ -186,5 +190,13 @@
     .header__links-block {
       flex-grow: 0;
     }
+  }
+}
+
+@media (min-width: $md) {
+  .header__panel--md-open {
+    height: auto;
+    max-width: 100%;
+    overflow: visible;
   }
 }
