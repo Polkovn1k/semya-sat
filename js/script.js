@@ -145,8 +145,7 @@
 
 
 
-(function () {
-  //подгрузка ajax'а
+//подгрузка ajax'а
   var btnAjax = document.querySelector(".btn--show-article");
   var xhr = new XMLHttpRequest();
   var fragments = document.createDocumentFragment();
@@ -175,6 +174,5 @@ xhr.addEventListener('load', function () {
   });
 });
 
-xhr.open("GET", "../json/articleData.json");
+xhr.open("GET", "json/articleData.json");
 xhr.send();
-}());
