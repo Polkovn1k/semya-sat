@@ -7,11 +7,6 @@
   var navTog = header.querySelector(".header__nav-tog");
   var navTogSvg = header.querySelectorAll(".header__nav-tog svg");
 
-  /*navTog.addEventListener("click", function(event) {
-    event.preventDefault();
-    headerNav.classList.toggle("open-nav");
-  });*/
-
   navTog.addEventListener("click", function(event) {
     event.preventDefault();
     for (var i = 0; i < navTogSvg.length; i++) {
@@ -19,6 +14,9 @@
     };
   });
 }());
+
+
+
 
 
 
@@ -30,10 +28,10 @@
   var searchTog = header.querySelector(".header__tog-search");
   var searchTogSvg = header.querySelectorAll(".header__tog-search svg");
 
-  searchTog.addEventListener("click", function(event) {
+/*  searchTog.addEventListener("click", function(event) {
     event.preventDefault();
     headerSearchPanel.classList.toggle("header__panel--md-open");
-  });
+  });*/
 
   searchTog.addEventListener("click", function(event) {
     event.preventDefault();
@@ -52,6 +50,9 @@
 
 
 
+
+
+
 (function () {
   //Двигаем панель search (дизйнерские изыски)
   var header = document.querySelector(".header");
@@ -65,11 +66,15 @@
 
 
 
+
+
+
 (function () {
   //при событиях клика или изменении вьюпорта пересчитывается высота блока и ставится отступ у main
   var header = document.querySelector(".header");
   var mainVal = document.querySelector(".main");
   var navTog = header.querySelector(".header__nav-tog");
+  var headerSearchPanel = header.querySelector(".header__panel");
   var searchTog = header.querySelector(".header__tog-search");
   var headerNav = document.querySelector(".navigation--header");
   var heightVal;
@@ -79,20 +84,24 @@
     mainVal.style.marginTop = heightVal;
   };
 
-  window.addEventListener("resize", function() {
+  window.addEventListener("resize", function(event) {
     headerHeight();
   });
 
-  navTog.addEventListener("click", function() {
+  navTog.addEventListener("click", function(event) {
+    event.preventDefault();
     headerNav.classList.toggle("navigation--open");
     setTimeout(headerHeight, 530);
   });
 
-  searchTog.addEventListener("click", function() {
-    heightVal = header.offsetHeight + "px";
-    mainVal.style.marginTop = heightVal;
+  searchTog.addEventListener("click", function(event) {
+    headerSearchPanel.classList.toggle("header__panel--md-open");
+    setTimeout(headerHeight, 530);
   });
 }());
+
+
+
 
 
 
@@ -109,7 +118,6 @@
       articles.classList.remove("articles--row");
     };
   }
-
   for (var i = 0; i < listTypeViewItem.length; i++) {
     listTypeViewItem[i].addEventListener("click", callback(i), true);
   }
@@ -117,8 +125,11 @@
 
 
 
+
+
+
 (function () {
-  //ПОПЫТКА СДЕЛАТЬ ACTIVE НА ФИЛЬТРЕ LIST TYPE
+  //list type добавляем active и меняем цвет SVG
   var articles = document.querySelector(".articles");
   var listTypeViewItem = document.querySelectorAll(".articles__list-type-view");
 
@@ -139,7 +150,11 @@
 
 
 
+
+
+
 (function () {
+  //Скрываем рекламу
   try {
     var ad = document.querySelector(".advertising");
     var adClose = ad.querySelector(".advertising__close");
@@ -147,42 +162,46 @@
     adClose.addEventListener("click", function(event) {
       ad.classList.add("advertising--close");
     });
-  } catch (err) {
-    console.error(err.message);
-  }
+  } catch (err) {}
 }());
-//Скрываем рекламу
 
 
 
-//подгрузка ajax'а
-var btnAjax = document.querySelector(".btn--show-article");
-var xhr = new XMLHttpRequest();
-var fragments = document.createDocumentFragment();
-var articleParent = document.querySelector(".articles__list");
-var articleChild = articleParent.querySelector(".article").cloneNode(true);
-var childImg = articleChild.querySelector(".article__img");
-var childTitle = articleChild.querySelector(".article__title");
-var childUrl = articleChild.querySelector(".article__link");
 
-//xhr.responseType = "json"; -- не работает в ссаном IE
-xhr.addEventListener('load', function () {
-  var allData = JSON.parse(xhr.responseText);
 
-  btnAjax.addEventListener("click", function (event) {
-    event.preventDefault();
-    for (var i = 0; i < allData[0].length; i++) {
-      childImg.style.backgroundImage = allData[0][i][0];
-      childTitle.innerText = allData[0][i][1];
-      childUrl.href = allData[0][i][2];
-      fragments.appendChild(articleChild.cloneNode(true));
-    }
-    articleParent.appendChild(fragments);
-    allData.shift();
-    if (allData.length !== 0) return;
-    btnAjax.classList.add("visually-hidden");
-  });
-});
 
-xhr.open("GET", "json/articleData.json");
-xhr.send();
+(function () {
+  //подгрузка ajax'а
+  try {
+    var btnAjax = document.querySelector(".btn--show-article");
+    var xhr = new XMLHttpRequest();
+    var fragments = document.createDocumentFragment();
+    var articleParent = document.querySelector(".articles__list");
+    var articleChild = articleParent.querySelector(".article").cloneNode(true);
+    var childImg = articleChild.querySelector(".article__img");
+    var childTitle = articleChild.querySelector(".article__title");
+    var childUrl = articleChild.querySelector(".article__link");
+
+    //xhr.responseType = "json"; -- не работает в ссаном IE
+    xhr.addEventListener('load', function () {
+      var allData = JSON.parse(xhr.responseText);
+
+      btnAjax.addEventListener("click", function (event) {
+        event.preventDefault();
+        for (var i = 0; i < allData[0].length; i++) {
+          childImg.style.backgroundImage = allData[0][i][0];
+          childTitle.innerText = allData[0][i][1];
+          childUrl.href = allData[0][i][2];
+          fragments.appendChild(articleChild.cloneNode(true));
+        }
+        articleParent.appendChild(fragments);
+        allData.shift();
+        if (allData.length !== 0) return;
+        btnAjax.classList.add("visually-hidden");
+      });
+    });
+
+    xhr.open("GET", "json/articleData.json");
+    xhr.send();
+  } catch (err) {}
+}());

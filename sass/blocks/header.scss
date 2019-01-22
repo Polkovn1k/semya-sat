@@ -7,6 +7,9 @@
   margin: 0 auto;
   overflow: hidden;
   background: $black;
+  @media (min-width: $xl) {
+    background: linear-gradient(180deg, $black 63px, $transparent 63px) no-repeat;
+  }
 }
 
 .header__container {
@@ -193,10 +196,31 @@
   }
 }
 
+//Для анимации search панели начиная с md
 @media (min-width: $md) {
   .header__panel--md-open {
     height: auto;
     max-width: 100%;
     overflow: visible;
+  }
+}
+
+//Исправление бага с отображением search панели на xl в IE10-11
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @media (min-width: $md) {
+    .header__panel {
+      max-width: 30px;
+      transition: none;
+      .header__tog-search {
+        order: -1;
+      }
+    }
+    .header__panel--md-open {
+      max-width: 100%;
+      transition: none;
+      .header__tog-search {
+        order: 0;
+      }
+    }
   }
 }
