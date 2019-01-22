@@ -18,8 +18,8 @@
   @media (min-width: $xl) {
     flex-grow: 1;
     background: $white;
-    max-height: none;
-    transition: none;
+    //max-height: none;
+    //transition: none;
     overflow: hidden;
   }
   &::after {
@@ -272,8 +272,8 @@
   max-height: 100vh;
   transition: max-height 0.5s linear;
   @media (min-width: $xl) {
-    max-height: none;
-    transition: none;
+    //max-height: none;
+    //transition: none;
   }
   .navigation__list {
     @media (min-width: $xl) {
