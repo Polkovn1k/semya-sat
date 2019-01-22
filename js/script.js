@@ -124,9 +124,11 @@
 
   var callback = function (i) {
     return function (event) {
-      if (event.currentTarget === listTypeViewItem[i]) {
-        return listTypeViewItem[i].classList.add("active");
+      if (event.currentTarget.classList.contains("active")) return;
+      for (var i = 0; i < listTypeViewItem.length; i++) {
+        listTypeViewItem[i].classList.remove("active");
       }
+      event.currentTarget.classList.add("active");
     };
   }
 
