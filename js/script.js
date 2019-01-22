@@ -77,6 +77,7 @@
   var headerSearchPanel = header.querySelector(".header__panel");
   var searchTog = header.querySelector(".header__tog-search");
   var headerNav = document.querySelector(".navigation--header");
+  var DO_AFTER_TRANSITION = 530;
   var heightVal;
 
   function headerHeight () {
@@ -91,12 +92,12 @@
   navTog.addEventListener("click", function(event) {
     event.preventDefault();
     headerNav.classList.toggle("navigation--open");
-    setTimeout(headerHeight, 530);
+    setTimeout(headerHeight, DO_AFTER_TRANSITION);
   });
 
   searchTog.addEventListener("click", function(event) {
     headerSearchPanel.classList.toggle("header__panel--md-open");
-    setTimeout(headerHeight, 530);
+    setTimeout(headerHeight, DO_AFTER_TRANSITION);
   });
 }());
 
