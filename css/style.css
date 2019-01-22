@@ -2679,7 +2679,9 @@ html {
   border-color: #282627; }
 
 .main {
-  margin-top: 63px; }
+  margin-top: 63px;
+  -webkit-transition: margin-top 0.2s ease;
+  transition: margin-top 0.2s ease; }
 
 .news {
   padding-bottom: 45px; }
