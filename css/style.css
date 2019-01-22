@@ -2802,7 +2802,7 @@ html {
   right: 0;
   width: 50px;
   height: 90px;
-  background: url("../../img/bg/news__arrow.png") no-repeat;
+  background: url("../img/bg/news__arrow.png") no-repeat;
   background-size: contain;
   -webkit-transform: translateX(-20px);
           transform: translateX(-20px);
