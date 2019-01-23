@@ -78,10 +78,9 @@
   var searchTog = header.querySelector(".header__tog-search");
   var headerNav = document.querySelector(".navigation--header");
   var DO_AFTER_TRANSITION = 530;
-  var heightVal;
 
   function headerHeight () {
-    heightVal = header.offsetHeight + "px";
+    var heightVal = header.offsetHeight + "px";
     mainVal.style.marginTop = heightVal;
   };
 
@@ -114,9 +113,15 @@
   var callback = function (i) {
     return function (event) {
       if (event.currentTarget.classList.contains("articles__row")) {
+        articles.classList.remove("articles--mixed-row");
         return articles.classList.add("articles--row");
+      } else if (event.currentTarget.classList.contains("articles__mixed-row")) {
+        articles.classList.remove("articles--row");
+        return articles.classList.add("articles--mixed-row");
+      } else {
+        articles.classList.remove("articles--mixed-row");
+        articles.classList.remove("articles--row");
       }
-      articles.classList.remove("articles--row");
     };
   }
   for (var i = 0; i < listTypeViewItem.length; i++) {
@@ -182,6 +187,7 @@
     var childImg = articleChild.querySelector(".article__img");
     var childTitle = articleChild.querySelector(".article__title");
     var childUrl = articleChild.querySelector(".article__link");
+    var childText = articleChild.querySelector(".article__text");
 
     //xhr.responseType = "json"; -- не работает в ссаном IE
     xhr.addEventListener('load', function () {
@@ -193,6 +199,7 @@
           childImg.style.backgroundImage = allData[0][i][0];
           childTitle.innerText = allData[0][i][1];
           childUrl.href = allData[0][i][2];
+          childText.innerText = allData[0][i][3];
           fragments.appendChild(articleChild.cloneNode(true));
         }
         articleParent.appendChild(fragments);

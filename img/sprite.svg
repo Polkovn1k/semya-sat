@@ -123,6 +123,11 @@
   <g fill-rule="evenodd">
     <path d="M1278.29,492.707l1.42-1.414,27,27-1.42,1.414Zm27.31-1.7,1.39,1.393-26.59,26.584-1.39-1.392Z" transform="translate(-1278.28 -491)"/>
   </g>
+</symbol><symbol id="icon 3 (2)" viewBox="0 0 1.03 1.03">
+  <g>
+    <path d="M.37.07h.66v.07H.37zM.37.48h.66v.07H.37zM.37.88h.66v.07H.37z"/>
+    <path d="M0 0h.22v.22H0zM0 .4h.22v.22H0zM0 .81h.22v.22H0z"/>
+  </g>
 </symbol><symbol id="insta" viewBox="0 0 2.61 2.61">
 <g fill="none" stroke-width="0.06" stroke-miterlimit="22.9256">
   <circle cx="1.31" cy="1.31" r="1.28"/>
@@ -132,7 +137,12 @@
 </g>
 </symbol><symbol id="list-style1">
     <path fill-rule="evenodd" d="M13.937 23v-9.063H23V23h-9.063zm0-23H23v9.062h-9.063V0zM0 13.937h9.062V23H0v-9.063zM0 0h9.062v9.062H0V0z"/>
-</symbol><symbol id="list-style2">
+</symbol><symbol id="list-style2" viewBox="0 0 1.03 1.03">
+  <g>
+    <path d="M.37.07h.66v.07H.37zM.37.48h.66v.07H.37zM.37.88h.66v.07H.37z"/>
+    <path d="M0 0h.22v.22H0zM0 .4h.22v.22H0zM0 .81h.22v.22H0z"/>
+  </g>
+</symbol><symbol id="list-style3">
     <path fill-rule="evenodd" d="M0 23v-3h24v3H0zm0-13h24v3H0v-3zM0 0h24v3H0V0z"/>
 </symbol><symbol id="logo-sch" viewBox="0 0 1004.46 283.05">
     <g>
