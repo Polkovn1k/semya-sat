@@ -90,9 +90,10 @@
   svg {
     cursor: pointer;
     fill: $silver;
+    transition: fill 0.3s ease;
   }
   svg:hover {
-    fill: #6090e0;
+    fill: $hovers;
   }
 }
 
@@ -101,6 +102,7 @@
   svg:hover {
     cursor: default;
     fill: $main-color;
+    transition: none;
   }
 }
 

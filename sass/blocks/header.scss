@@ -6,9 +6,9 @@
   height: auto;
   margin: 0 auto;
   overflow: hidden;
-  background: $black;
+  background: $main-color;
   @media (min-width: $xl) {
-    background: linear-gradient(180deg, $black 63px, $transparent 63px) no-repeat;
+    background: linear-gradient(180deg, $main-color 63px, $transparent 63px) no-repeat;
   }
 }
 
