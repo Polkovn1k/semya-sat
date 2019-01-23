@@ -81,7 +81,7 @@
   overflow: hidden;
   font-family: $font;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.5;
   color: $main-color;
   transition: color 0.3s ease;
@@ -197,8 +197,6 @@
       margin-left: 20px;
       padding-left: 0;
       font-size: 19px;
-      font-weight: 700;
-      text-align: left;
     }
     .article__text {
       @include field-reset();

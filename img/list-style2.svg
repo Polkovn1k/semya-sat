@@ -1,14 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 0.12 0.12" xmlns:xlink="http://www.w3.org/1999/xlink">
- <g>
-  <rect width="0.03" height="0.03"/>
-  <rect x="0.05" y="0.01" width="0.08" height="0.01"/>
-  <rect x="0.05" y="0.06" width="0.08" height="0.01"/>
-  <rect x="0.05" y="0.11" width="0.08" height="0.01"/>
-  <rect y="0.05" width="0.02" height="0.02"/>
-  <rect y="0.1" width="0.02" height="0.02"/>
-  <rect y="0.05" width="0.03" height="0.03"/>
-  <rect y="0.1" width="0.03" height="0.03"/>
-  <rect x="0.05" y="0.06" width="0.08" height="0.01"/>
-  <rect x="0.05" y="0.01" width="0.08" height="0.01"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 1.03 1.03">
+  <g>
+    <path d="M.37.07h.66v.07H.37zM.37.48h.66v.07H.37zM.37.88h.66v.07H.37z" />
+    <path d="M0 0h.22v.22H0zM0 .4h.22v.22H0zM0 .81h.22v.22H0z" />
+  </g>
 </svg>
