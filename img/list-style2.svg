@@ -1,3 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="23">
-    <path fill-rule="evenodd" d="M0 23v-3h24v3H0zm0-13h24v3H0v-3zM0 0h24v3H0V0z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 0.12 0.12" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g>
+  <rect width="0.03" height="0.03"/>
+  <rect x="0.05" y="0.01" width="0.08" height="0.01"/>
+  <rect x="0.05" y="0.06" width="0.08" height="0.01"/>
+  <rect x="0.05" y="0.11" width="0.08" height="0.01"/>
+  <rect y="0.05" width="0.02" height="0.02"/>
+  <rect y="0.1" width="0.02" height="0.02"/>
+  <rect y="0.05" width="0.03" height="0.03"/>
+  <rect y="0.1" width="0.03" height="0.03"/>
+  <rect x="0.05" y="0.06" width="0.08" height="0.01"/>
+  <rect x="0.05" y="0.01" width="0.08" height="0.01"/>
+ </g>
 </svg>

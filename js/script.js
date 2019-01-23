@@ -78,10 +78,9 @@
   var searchTog = header.querySelector(".header__tog-search");
   var headerNav = document.querySelector(".navigation--header");
   var DO_AFTER_TRANSITION = 530;
-  var heightVal;
 
   function headerHeight () {
-    heightVal = header.offsetHeight + "px";
+    var heightVal = header.offsetHeight + "px";
     mainVal.style.marginTop = heightVal;
   };
 
