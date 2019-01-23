@@ -101,7 +101,7 @@
   flex-grow: 1;
   margin-right: 10px;
   padding: 10px;
-  background: $black;
+  background: $main-color;
   border: 1px solid $white;
   border-radius: 5px;
   font-family: $font;
@@ -128,6 +128,7 @@
     width: 100%;
     height: 100%;
     stroke: $white;
+    fill: $transparent;
     transition: stroke 0.3s ease;
   }
   svg:hover {
@@ -146,6 +147,7 @@
     fill: $hovers;
   }
   .header__search-icon {
+    fill: $transparent;
     width: 100%;
     height: 100%;
     stroke: $white;
