@@ -138,81 +138,131 @@
 
 //------body-nav
 .navigation--body {
-  display: none;
+  //display: none;
   @media (min-width: $xl) {
     display: block;
     padding-bottom: 20px;
   }
-  .navigation__list {
-    @include order-reset();
-    @include container();
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
+  .navigation__open-nav {
+    display: block;
     margin: 0 auto;
-  }
-  .navigation__list::before {
-    @include pseudo();
-    right: $container-padding;
-    bottom: 0;
-    left: $container-padding;
-    border-bottom: 1px solid $main-color;
-  }
-  .navigation__item {
-    position: relative;
-    padding: 0 5px;
-    min-height: 45px;
-    flex-grow: 1;
+    padding: 0 10px;
+    width: 60%;
+    max-width: 500px;
+    min-width: 290px;
+    height: 45px;
+    border: 1px solid $main-color;
+    border-radius: 5px;
     font-family: $font;
     font-size: 16px;
     font-weight: 400;
     line-height: 45px;
-    text-align: center;
     color: $main-color;
+    text-align: left;
+    background: $transparent;
+    @media (min-width: $xl) {
+      display: none;
+    }
+  }
+  .navigation__list {
+    @include order-reset();
+    @media (min-width: $xl) {
+      @include container();
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+  }
+  .navigation__list::before {
+    @media (min-width: $xl) {
+      @include pseudo();
+      right: $container-padding;
+      bottom: 0;
+      left: $container-padding;
+      border-bottom: 1px solid $main-color;
+    }
+  }
+  .navigation__item {
+    font-family: $font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    color: $main-color;
+    text-align: left;
+    @media (min-width: $xl) {
+      position: relative;
+      padding: 0 5px;
+      min-height: 45px;
+      flex-grow: 1;
+      text-align: center;
+    }
     &:hover {
-      color: $hovers;
+      @media (min-width: $xl) {
+        color: $hovers;
+      }
     }
     &::before {
-      @include pseudo();
-      z-index: 10;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: $transparent;
-      transition: background 0.3s ease;
+      @media (min-width: $xl) {
+        @include pseudo();
+        z-index: 10;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $transparent;
+        transition: background 0.3s ease;
+      }
     }
     &:hover::before {
-      background: $hovers;
+      @media (min-width: $xl) {
+        background: $hovers;
+      }
     }
   }
 
-
-
   .navigation__item-link {
-    padding: 0;
-    border-bottom: 1px solid $transparent;
-    transition: color 0.3s ease;
+    display: block;
+    height: 100%;
+    width: 100%;
+    @media (min-width: $xl) {
+      display: inline;
+      height: auto;
+      width: auto;
+      padding: 0;
+      border-bottom: 1px solid $transparent;
+      transition: color 0.3s ease;
+    }
     &:hover {
-      color: $hovers;
+      @media (min-width: $xl) {
+        color: $hovers;
+      }
     }
   }
 
   .navigation__item.active {
-    font-weight: 700;
+    @media (min-width: $xl) {
+      font-weight: 700;
+    }
     &:hover {
-      color: $main-color;
-      cursor: default;
+      @media (min-width: $xl) {
+        color: $main-color;
+        cursor: default;
+      }
     }
     &::before,
     &:hover::before {
-      background: $main-color ;
-      transition: none;
+      @media (min-width: $xl) {
+        background: $main-color ;
+        transition: none;
+      }
     }
     .navigation__item-link {
-      color: currentColor;
-      cursor: default;
-      transition: none;
+      @media (min-width: $xl) {
+        color: currentColor;
+        cursor: default;
+        transition: none;
+      }
     }
     .navigation__item-link:hover {
       border-bottom: 1px solid transparentize($black, 0.9);

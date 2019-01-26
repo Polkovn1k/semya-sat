@@ -213,3 +213,19 @@
     xhr.send();
   } catch (err) {}
 }());
+
+
+
+
+
+
+(function () {
+  //Навигация в body - отображаем по клику
+  var openNavBody = document.querySelector(".navigation__open-nav");
+  var navBody = document.querySelector(".navigation--body .navigation__list");
+  var navBody = navBody.querySelectorAll(".navigation--body .navigation__list .navigation__item");
+
+  openNavBody.addEventListener("click", function (event) {
+
+  });
+}());
