@@ -139,18 +139,19 @@
 //------body-nav
 .navigation--body {
   //display: none;
+  padding-bottom: 45px;
   @media (min-width: $xl) {
     display: block;
     padding-bottom: 20px;
   }
   .navigation__open-nav {
+    position: relative;
     display: block;
     margin: 0 auto;
     padding: 0 10px;
-    width: 60%;
-    max-width: 500px;
-    min-width: 290px;
+    width: calc(100% - #{$container-padding * 2});
     height: 45px;
+    overflow: hidden;
     border: 1px solid $main-color;
     border-radius: 5px;
     font-family: $font;
@@ -160,14 +161,41 @@
     color: $main-color;
     text-align: left;
     background: $transparent;
+    cursor: pointer;
+    outline: none;
     @media (min-width: $xl) {
       display: none;
     }
   }
+  .navigation__open-nav.active + .navigation__list {
+    max-height: 0;
+    overflow: hidden;
+    @media (min-width: $xl) {
+      max-height: none;
+      overflow: visible;
+    }
+  }
+  .navigation__open-nav::before {
+    @include pseudo();
+    width: 25px;
+    height: 25px;
+    top: 2px;
+    right: 15px;
+    border: 1px solid $main-color;
+    border-left-color: $transparent;
+    border-top-color: $transparent;
+    transform: rotate(45deg);
+  }
   .navigation__list {
     @include order-reset();
+    width: calc(100% - #{$container-padding * 2});
+    margin: 0 auto;
+    max-height: 100vh;
+    overflow: visible;
+    transition: max-height .5s linear;
     @media (min-width: $xl) {
       @include container();
+      width: 100%;
       position: relative;
       display: flex;
       flex-wrap: wrap;
@@ -223,51 +251,49 @@
 
   .navigation__item-link {
     display: block;
+    padding-left: $container-padding;
     height: 100%;
     width: 100%;
+    transition: color 0.3s ease, background 0.3s ease;
     @media (min-width: $xl) {
       display: inline;
       height: auto;
       width: auto;
       padding: 0;
       border-bottom: 1px solid $transparent;
-      transition: color 0.3s ease;
     }
     &:hover {
+      color: $hovers;
+      background: $article-bg;
       @media (min-width: $xl) {
-        color: $hovers;
+        background: $transparent;
       }
     }
   }
 
   .navigation__item.active {
+    color: $main-color;
+    background: $article-bg;
     @media (min-width: $xl) {
       font-weight: 700;
+      background: none;
     }
     &:hover {
-      @media (min-width: $xl) {
-        color: $main-color;
-        cursor: default;
-      }
+      color: $main-color;
+      cursor: default;
     }
     &::before,
     &:hover::before {
-      @media (min-width: $xl) {
-        background: $main-color ;
-        transition: none;
-      }
+      background: $main-color ;
+      transition: none;
     }
     .navigation__item-link {
+      color: currentColor;
+      background: $article-bg;
+      cursor: default;
+      transition: none;
       @media (min-width: $xl) {
-        color: currentColor;
-        cursor: default;
-        transition: none;
-      }
-    }
-    .navigation__item-link:hover {
-      border-bottom: 1px solid transparentize($black, 0.9);
-      @media (min-width: $xl) {
-        border-color: $transparent;
+        background: none;
       }
     }
   }

@@ -210,6 +210,10 @@
       font-weight: 400;
       line-height: 1.5;
       color: $main-color;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
     .article__btn {
       margin: 0 0 0 20px;

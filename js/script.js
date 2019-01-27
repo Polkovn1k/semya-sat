@@ -114,10 +114,12 @@
     return function (event) {
       if (event.currentTarget.classList.contains("articles__row")) {
         articles.classList.remove("articles--mixed-row");
-        return articles.classList.add("articles--row");
+        articles.classList.add("articles--row");
+        return null;
       } else if (event.currentTarget.classList.contains("articles__mixed-row")) {
         articles.classList.remove("articles--row");
-        return articles.classList.add("articles--mixed-row");
+        articles.classList.add("articles--mixed-row");
+        return null;
       } else {
         articles.classList.remove("articles--mixed-row");
         articles.classList.remove("articles--row");
@@ -223,9 +225,19 @@
   //Навигация в body - отображаем по клику
   var openNavBody = document.querySelector(".navigation__open-nav");
   var navBody = document.querySelector(".navigation--body .navigation__list");
-  var navBody = navBody.querySelectorAll(".navigation--body .navigation__list .navigation__item");
+  var navBodyItemActive = navBody.querySelector(".navigation__item.active .navigation__item-link");
+  var DO_AFTER_TRANSITION = 500;
+
+  openNavBody.textContent = navBodyItemActive.textContent;
 
   openNavBody.addEventListener("click", function (event) {
-
+    openNavBody.classList.toggle("active");
+    setTimeout(function () {
+      if (openNavBody.classList.contains("active")) {
+        openNavBody.textContent = navBodyItemActive.textContent;
+        return null;
+      }
+    }, DO_AFTER_TRANSITION);
+    openNavBody.textContent = "";
   });
 }());
