@@ -186,6 +186,15 @@
     border-top-color: $transparent;
     transform: rotate(45deg);
   }
+  .navigation__open-nav::after {
+    @include pseudo();
+    width: 55px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid $transparent;
+    border-left-color: $main-color;
+  }
   .navigation__list {
     @include order-reset();
     width: calc(100% - #{$container-padding * 2});

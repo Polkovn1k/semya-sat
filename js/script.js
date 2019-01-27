@@ -223,21 +223,37 @@
 
 (function () {
   //Навигация в body - отображаем по клику
-  var openNavBody = document.querySelector(".navigation__open-nav");
-  var navBody = document.querySelector(".navigation--body .navigation__list");
-  var navBodyItemActive = navBody.querySelector(".navigation__item.active .navigation__item-link");
-  var DO_AFTER_TRANSITION = 500;
+  try {
+    var openNavBody = document.querySelector(".navigation__open-nav");
+    var navBody = document.querySelector(".navigation--body .navigation__list");
+    var navBodyItemActive = navBody.querySelector(".navigation__item.active .navigation__item-link");
+    var DO_AFTER_TRANSITION = 500;
 
-  openNavBody.textContent = navBodyItemActive.textContent;
+    openNavBody.textContent = navBodyItemActive.textContent;
 
-  openNavBody.addEventListener("click", function (event) {
-    openNavBody.classList.toggle("active");
-    setTimeout(function () {
-      if (openNavBody.classList.contains("active")) {
-        openNavBody.textContent = navBodyItemActive.textContent;
-        return null;
-      }
-    }, DO_AFTER_TRANSITION);
-    openNavBody.textContent = "";
+    openNavBody.addEventListener("click", function (event) {
+      openNavBody.classList.toggle("active");
+      setTimeout(function () {
+        if (openNavBody.classList.contains("active")) {
+          openNavBody.textContent = navBodyItemActive.textContent;
+          return null;
+        }
+      }, DO_AFTER_TRANSITION);
+      openNavBody.textContent = "";
+    });
+  } catch (err) {}
+}());
+
+
+
+
+
+
+(function () {
+  //Убираем атрибут href в навигации, если есть класс active
+  var allNavActiveLinks = document.querySelectorAll(".navigation__item.active .navigation__item-link");
+  //console.dir(allNavActiveLinks);
+  allNavActiveLinks.forEach(function(item) {
+    item.removeAttribute("href");
   });
 }());
