@@ -14,7 +14,7 @@
 
 .article__container {
   width: 100%;
-  height: 125px;
+  //height: 125px;
   border-radius: 10px;
   background-color: $article-bg;
   overflow: hidden;
@@ -22,13 +22,13 @@
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
   border: 1px solid $transparent;
   @media (min-width: $sm) {
-    height: 113px;
+    //height: 113px;
   }
   @media (min-width: $md) {
-    height: 285px;
+    //height: 285px;
   }
   @media (min-width: $xl) {
-    height: 330px;
+    //height: 330px;
   }
 }
 
@@ -38,46 +38,36 @@
 }
 
 .article__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   padding: 13px;
   position: relative;
   @media (min-width: $sm) {
-    padding: 13px 13px 13px 195px;
+    //padding: 13px 13px 13px 195px;
   }
   @media (min-width: $md) {
-    padding: 163px 13px 13px 13px;
+    //padding: 163px 13px 13px 13px;
   }
   @media (min-width: $xl) {
-    padding: 185px 20px 20px 20px;
+    //padding: 185px 20px 20px 20px;
   }
 }
 
 .article__img {
-  display: none;
-  @media (min-width: $sm) {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 195px;
-    height: 113px;
-    background: url("../img/bg/article__1.jpg") no-repeat;
-    background-size: cover;
-  }
-  @media (min-width: $md) {
+  margin: -13px -13px 0 -13px;
+  order: -1;
+  img {
     width: 100%;
-    height: 150px;
-  }
-  @media (min-width: $xl) {
-    height: 165px;
+    height: auto;
   }
 }
 
 .article__title {
   @include field-reset();
-  max-height: 38px;
+  padding: 15px 5px;
+  height: 90px;
   overflow: hidden;
   font-family: $font;
   font-size: 13px;
@@ -85,17 +75,16 @@
   line-height: 1.5;
   color: $main-color;
   transition: color 0.3s ease;
-  @media (min-width: $sm) {
-    padding-left: 13px;
-    font-size: 13px;
-  }
   @media (min-width: $md) {
-    max-height: 93px;
-    padding-left: 0;
+    height: 110px;
     font-size: 17px;
   }
+  @media (min-width: $lg) {
+    height: 125px;
+  }
   @media (min-width: $xl) {
-    max-height: 97px;
+    height: 110px;
+    font-size: 15px;
   }
 }
 
@@ -129,38 +118,49 @@
 
 //------ROW-article
 .articles--row {
-  @media (min-width: $md) {
-    .article {
-      flex-grow: 0;
-      flex-shrink: 0;
-      flex-basis: auto;
-      width: 100%;
-      max-width: none;
-      margin-bottom: 3px;
-    }
-    .article:last-child {
-      margin-bottom: 40px;
-    }
-    .article__container {
+  .article {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 3px;
+  }
+  .article:last-child {
+    margin-bottom: 40px;
+  }
+  .article__container {
+    height: 60px;
+    box-shadow: none;
+    @media (min-width: $sm) {
       height: 50px;
-      box-shadow: none;
     }
-    .article__link {
+  }
+  .article__link {
+    padding: 10px 20px;
+    @media (min-width: $lg) {
       padding: 10px 30px;
     }
-    .article__img {
-      display: none;
+  }
+  .article__img {
+    display: none;
+  }
+  .article__title {
+    height: 100%;
+    margin-left: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: left;
+    @media (min-width: $sm) {
+      line-height: 28px;
     }
-    .article__title {
-      height: 24px;
-      margin-left: 0;
-      padding-left: 0;
+    @media (min-width: $md) {
       font-size: 16px;
-      text-align: left;
     }
-    .article__btn {
-      margin: 0 0 0 20px;
-    }
+  }
+  .article__btn {
+    margin: 0 0 0 20px;
   }
 }
 
@@ -182,20 +182,21 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px 20px 20px 287px;
+      padding: 20px 20px 20px 298px;
     }
     .article__img {
       display: block;
       position: absolute;
       top: 0;
       left: 0;
-      width: 287px;
+      width: 298px;
       height: 168px;
+      margin: 0;
     }
     .article__title {
       height: 30px;
       margin-left: 20px;
-      padding-left: 0;
+      padding: 0;
       font-size: 19px;
     }
     .article__text {

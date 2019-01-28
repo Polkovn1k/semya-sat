@@ -64,14 +64,11 @@
 }
 
 .articles__list-type {
-  display: none;
-  @media (min-width: $md) {
-    @include container();
-    margin: 0 auto 20px auto;
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 $container-padding;
-  }
+  @include container();
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 $container-padding;
 }
 
 .articles__list-type-text {
@@ -129,5 +126,12 @@
     margin: 0 -10px;
     margin-bottom: -50px;
     padding-bottom: 50px;
+  }
+}
+
+.articles__mixed-row {
+  display: none;
+  @media (min-width: $md) {
+    display: inline-block;
   }
 }

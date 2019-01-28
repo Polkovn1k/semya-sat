@@ -175,17 +175,33 @@
       overflow: visible;
     }
   }
-  .navigation__open-nav::before {
+  .navigation__open-nav.active::before {
     @include pseudo();
-    width: 25px;
-    height: 25px;
-    top: 2px;
-    right: 15px;
+    width: 15px;
+    height: 15px;
+    top: 10px;
+    right: 20px;
     border: 1px solid $main-color;
     border-left-color: $transparent;
     border-top-color: $transparent;
+    transform-origin: center center;
     transform: rotate(45deg);
+    //transition: transform .5s linear;
   }
+  .navigation__open-nav::before {
+    @include pseudo();
+    width: 15px;
+    height: 15px;
+    top: 20px;
+    right: 20px;
+    border: 1px solid $main-color;
+    border-left-color: $transparent;
+    border-top-color: $transparent;
+    transform-origin: center center;
+    transform: rotate(225deg);
+    //transition: transform .5s linear, top .5s linear, right .5s linear;
+  }
+  .navigation__open-nav.active::after,
   .navigation__open-nav::after {
     @include pseudo();
     width: 55px;
